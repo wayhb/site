@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Сайт репетитора по математике</title>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+	<header>
+		<div id="logo" onclick="slowScroll('#top')">
+			<span>_Adelya</span>
+		</div>
+		<div id="about">
+			<a href="#" title="Обо мне" onclick="slowScroll('#main')">Обо мне</a>
+			<a href="#" onclick="slowScroll('#overview')" title="Pricelist">Pricelist</a>
+			<a href="#" onclick="slowScroll('#contacts')" title="Контакты">Контакты</a>
+			<a href="#" onclick="slowScroll('#main') "title="FAQ" >FAQ</a>
+			
+		</div>
+	</header>
+  <div id="sidebar">
+    <div class="toggle-btn" onclick="openMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <ul>
+      <li>Меню сайта</li>
+      <li><a href="/">Обо мне</a></li>
+      <li><a href="/">Pricelist</a></li>
+      <li><a href="/">Контакты</a></li>
+      <li><a href="/">FAQ</a></li>
+    </ul>
+  </div>
+
+  <script>
+    function openMenu(){
+      document.getElementById("sidebar").classList.toggle('active');
+    }
+  </script>
+
+
+  <div id="top">
+    <h1>Учение и труд</h1>
+    <h3>все перетрут</h3>
+  </div>
+
+
+  <div id="main">
+    <div class="intro">
+      <h2>Почему именно я должна стать вашим репетитором?</h2>
+    </div>
+    <div class="text">
+      <span>Я студентка Радиофизического факультета ННГУ им. Лобачевского, направление: Фундаментальная информатика и информационные технологии.
+	На занятиях:
+	Готовлю к ОГЭ, ЕГЭ.
+	Провожу полный доскональный разбор домашних и классных работ.
+	Разбираю плохо усвоенные темы.
+	Провожу занятия либо у себя дома, либо онлайн: через зум, скайп или дискорд</span>
+    </div>
+  </div>
+
+  <div id="overview">
+    <h2>Pricelist</h2>
+    <h4>В зависимости от длительности урока цена будет составлять:</h4>
+    <div class="text">
+      <span>45 мин - 700р </span>
+      <span>60 мин - 800р</span>
+    </div>
+  </div>
+
+  <div id="contacts">
+    <center><h5>Обратная связь</h5></center>
+    <form id="form_input">
+      <label for="name">Имя <span>*</span></label><br>
+      <input type="text" placeholder="Введите имя" name="name" id="name"><br>
+      <label for="email">Ваша почта <span>*</span></label><br>
+			<input type="email" placeholder="Введите email" name="email" id="email"><br>
+			<label for="message">Сообщение <span>*</span></label><br>
+			<textarea placeholder="Введите ваше сообщение" name="message" id="message"></textarea><br>
+			<div id="mess_send" class="btn">Отправить</div>
+    </form>
+  </div>
+
+  <div id="faq">
+    <div>
+      <span class="title">Оплата</span><br>
+      <span class="heading">Как будет проходит оплата?</span>
+      <p>Переводом на карту, все детали можно будет переговорить.</p>
+    </div>
+    <div>
+      <span class="title">Информация</span><br>
+      <span class="heading">Как будет проходить первый урок?</span>
+      <p>На первом уроке я проведу комплекную диагностику знаний ученика. Ознакомлюсь с темами, которые у него западают, а также с учебниками, классными и домашними работами. </p>
+    </div>
+    <div>
+      <span class="title">Гарантии</span><br>
+      <span class="heading">Если ученик будет продолжать получать плохие оценки?</span>
+      <p>Сделаю все возможное, чтобы такого не было! Все можно будет обговорить в индивидуальном порядке.</p>
+  </div>
+
+
+	
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+    function slowScroll(id) {
+      $('html, body').animate({
+        scrollTop: $(id).offset().top
+      }, 500);
+    }
+
+
+	$(document).on("scroll", function () {
+      if($(window).scrollTop() === 0)
+        $("header").removeClass("fixed");
+      else
+        $("header").attr("class", "fixed");
+    });
+
+
+</script>
+</body>
+</html>
